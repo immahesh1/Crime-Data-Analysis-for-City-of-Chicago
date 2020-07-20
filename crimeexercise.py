@@ -49,6 +49,7 @@ rc.printSchema()
 from pyspark.sql.types import BooleanType
 # rc = rc.withColumn('Arrest',rc['Arrest'].cast(BooleanType())) #since type of Arrest is String so changing it to Boolean
 
+"""**Problem 1: Percentage of reported crime that results in arrest**"""
 rc.select('Arrest').distinct().show()
 
 num_arrested_true = rc.filter(col('Arrest') == 'true').count()
